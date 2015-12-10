@@ -13,7 +13,8 @@ static char THIS_FILE[] = __FILE__;
 // CMy6_15App
 
 BEGIN_MESSAGE_MAP(CMy6_15App, CWinApp)
-	//{{AFX_MSG_MAP(CMy6_15App)
+	//{
+	{AFX_MSG_MAP(CMy6_15App)
 		// NOTE - the ClassWizard will add and remove mapping macros here.
 		//    DO NOT EDIT what you see in these blocks of generated code!
 	//}}AFX_MSG
@@ -25,6 +26,7 @@ END_MESSAGE_MAP()
 
 CMy6_15App::CMy6_15App()
 {
+	
 	// TODO: add construction code here,
 	// Place all significant initialization in InitInstance
 }
@@ -39,6 +41,7 @@ CMy6_15App theApp;
 
 BOOL CMy6_15App::InitInstance()
 {
+	
 	AfxEnableControlContainer();
 
 	// Standard initialization
@@ -101,42 +104,50 @@ int totaljs;
 int totalkc;
 class CAboutDlg : public CDialog
 {
+
 public:
 	CAboutDlg();
 
 // Dialog Data
-	//{{AFX_DATA(CAboutDlg)
-	enum { IDD = IDD_ABOUTBOX };
+	//{{
+	AFX_DATA(CAboutDlg)
+	enum { 
+	IDD = IDD_ABOUTBOX };
 	//}}AFX_DATA
 
 	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CAboutDlg)
+	//{{
+	AFX_VIRTUAL(CAboutDlg)
 	protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
 	//}}AFX_VIRTUAL
 
 // Implementation
 protected:
-	//{{AFX_MSG(CAboutDlg)
+	//{{
+	AFX_MSG(CAboutDlg)
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };
 
 CAboutDlg::CAboutDlg() : CDialog(CAboutDlg::IDD)
 {
-	//{{AFX_DATA_INIT(CAboutDlg)
+	//{{
+	AFX_DATA_INIT(CAboutDlg)
 	//}}AFX_DATA_INIT
 }
 
 void CAboutDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialog::DoDataExchange(pDX);
-	//{{AFX_DATA_MAP(CAboutDlg)
+	//{{
+	AFX_DATA_MAP(CAboutDlg)
 	//}}AFX_DATA_MAP
 }
 
 BEGIN_MESSAGE_MAP(CAboutDlg, CDialog)
-	//{{AFX_MSG_MAP(CAboutDlg)
+	//{{
+	AFX_MSG_MAP(CAboutDlg)
 		// No message handlers
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
@@ -147,7 +158,8 @@ END_MESSAGE_MAP()
 CMy6_15Dlg::CMy6_15Dlg(CWnd* pParent /*=NULL*/)
 	: CDialog(CMy6_15Dlg::IDD, pParent)
 {
-	//{{AFX_DATA_INIT(CMy6_15Dlg)
+	//{{
+	AFX_DATA_INIT(CMy6_15Dlg)
 	m_M1 = -1;
 	//}}AFX_DATA_INIT
 	// Note that LoadIcon does not require a subsequent DestroyIcon in Win32
@@ -157,13 +169,15 @@ CMy6_15Dlg::CMy6_15Dlg(CWnd* pParent /*=NULL*/)
 void CMy6_15Dlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialog::DoDataExchange(pDX);
-	//{{AFX_DATA_MAP(CMy6_15Dlg)
+	//{{
+	AFX_DATA_MAP(CMy6_15Dlg)
 	DDX_Radio(pDX, IDC_M, m_M1);
 	//}}AFX_DATA_MAP
 }
 
 BEGIN_MESSAGE_MAP(CMy6_15Dlg, CDialog)
-	//{{AFX_MSG_MAP(CMy6_15Dlg)
+	//{{
+	AFX_MSG_MAP(CMy6_15Dlg)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
@@ -277,6 +291,7 @@ void CMy6_15Dlg::OnIn()
     long posEnd1=ins1.tellg() ;		// 记录二进制文件末尾位置
     ins1.seekg( 0, ios::beg ) ;	    // 移动读指针到文件头
 	if(!ins5){
+		
 		MessageBox("不能打开kcchain文件!!!");
 		exit(1);
 	}
@@ -438,7 +453,8 @@ static char THIS_FILE[] = __FILE__;
 JS_ADDMARK::JS_ADDMARK(CWnd* pParent /*=NULL*/)
 	: CDialog(JS_ADDMARK::IDD, pParent)
 {
-	//{{AFX_DATA_INIT(JS_ADDMARK)
+	//{{
+	AFX_DATA_INIT(JS_ADDMARK)
 	m_NUM = _T("");
 	m_PSCJ = 0.0;
 	m_SNUM = _T("");
@@ -451,7 +467,8 @@ JS_ADDMARK::JS_ADDMARK(CWnd* pParent /*=NULL*/)
 void JS_ADDMARK::DoDataExchange(CDataExchange* pDX)
 {
 	CDialog::DoDataExchange(pDX);
-	//{{AFX_DATA_MAP(JS_ADDMARK)
+	//{{
+	AFX_DATA_MAP(JS_ADDMARK)
 	DDX_Control(pDX, IDC_XS_LIST, m_XS_LIST);
 	DDX_Text(pDX, IDC_NUM, m_NUM);
 	DDX_Text(pDX, IDC_PSCJ, m_PSCJ);
@@ -463,7 +480,8 @@ void JS_ADDMARK::DoDataExchange(CDataExchange* pDX)
 
 
 BEGIN_MESSAGE_MAP(JS_ADDMARK, CDialog)
-	//{{AFX_MSG_MAP(JS_ADDMARK)
+	//{{
+	AFX_MSG_MAP(JS_ADDMARK)
 	ON_BN_CLICKED(IDC_OKSHOW, OnOkshow)
 	ON_BN_CLICKED(IDC_OKADD, OnOkadd)
 	//}}AFX_MSG_MAP
